@@ -1,0 +1,147 @@
+<div class="container" style="padding-top: 50px;">
+    <h1>PIPES:</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Variable</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>{{nombre}}</td>
+                <td>uppdercase</td>
+                <td>{{nombre | uppercase}}</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>{{nombre}}</td>
+                <td>lowercase</td>
+                <td>{{nombre | lowercase}}</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>{{nombre}}</td>
+                <td>slice:5</td>
+                <td>{{nombre | slice:5}}</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>{{nombre}}</td>
+                <td>slice:0:15</td>
+                <td>{{nombre | slice:0:15}}</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>{{arregloNumeros}}</td>
+                <td>slice:1:5</td>
+                <td>{{arregloNumeros | slice:1:5}}</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>{{arregloNumeros}}</td>
+                <td>slice:1:5</td>
+                <td>{{arregloNumeros | slice:1:5}}</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>{{PI}}</td>
+                <td>number <br> minInteger.minFraction-maxFraction</td>
+                <td>{{PI | number}}</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>{{PI}}</td>
+                <td>number:'3.0-0'</td>
+                <td>{{PI | number:'3.0-0'}}</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>{{PI}}</td>
+                <td>number:'1.2-2'</td>
+                <td>{{PI | number:'1.2-2'}}</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>{{myNumber}}</td>
+                <td>percent:'2.2-2'</td>
+                <td>{{myNumber | percent:'2.2-2'}}</td>
+            </tr>
+            <tr>
+                <th scope="row">11</th>
+                <td>{{myMoneda}}</td>
+                <td>currency:'EUR':true</td>
+                <td>{{myMoneda | currency:'EUR':true}}</td>
+            </tr>
+            <tr>
+                <th scope="row">12</th>
+                <td>{{myMoneda}}</td>
+                <td>currency:'EUR':false</td>
+                <td>{{myMoneda | currency:'EUR':false}}</td>
+            </tr>
+            <tr>
+                <th scope="row">13</th>
+                <td>{{valorPromesa}}</td>
+                <td>async</td>
+                <td>{{ valorPromesa | async }}</td>
+            </tr>
+            <tr>
+                <th scope="row">13</th>
+                <td>{{myDate}}</td>
+                <td>date</td>
+                <td>{{ myDate | date }}</td>
+            </tr>
+            <tr>
+                <th scope="row">14</th>
+                <td>{{myDate}}</td>
+                <td>date:'medium'</td>
+                <td>{{ myDate | date:'medium' }}</td>
+            </tr>
+            <tr>
+                <th scope="row">15</th>
+                <td>{{myDate}}</td>
+                <td>date:'dd-MMMM-yyyy : HH-mm-ss'</td>
+                <td>{{ myDate | date:'dd-MMMM-yyyy : HH-mm-ss' }}</td>
+            </tr>
+            <tr>
+                <th scope="row">16</th>
+                <td>{{myName}}</td>
+                <td>personalizado</td>
+                <td>{{ myName | capitalizado }}</td>
+            </tr>
+            <tr>
+                <th scope="row">16</th>
+                <td>{{myName}}</td>
+                <td>contrasena</td>
+                <td>{{ myName | contrasena:activarContrasena }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <button (click)="accionContrasena()" type="button" class="btn btn-primary btn-lg btn-block">CLICK ME</button>
+    <br>
+
+    <h1>SLICE IN ngFOR: slice:3:6</h1>
+    <p>utiliza un for para limitar los items que este muestra en el navegador => [0,1,2,3,4,5,6,7,8,9];</p>
+    <p *ngFor="let x of arregloNumeros | slice:3:6">{{x}}</p>
+
+    <br>
+
+    <h1>JSON</h1>
+    <h4>Normal:</h4>
+    <p>{{heroe | json}}</p>
+
+    <h4>Pre:</h4>
+    <pre>{{heroe | json}}</pre>
+
+
+    <h1>YOUTUBE</h1>
+    <iframe width="560" height="315" [src]="linkYoutubeVideo | domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <br><br><br><br><br><br><br><br><br>
+
+</div>
